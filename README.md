@@ -13,10 +13,10 @@ cp .env.example .env
 
 Заполняем данные в .env
 
-##Запуск бота 
+## Запуск бота 
 python3 bot.py
 или
 python bot.py
 
-##Запуск панельки
+## Запуск панельки
 uvicorn main:app --reload
