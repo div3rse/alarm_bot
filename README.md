@@ -12,6 +12,10 @@ pip install -r requirements.txt
 cp .env.example .env
 
 Заполняем данные в .env
+##
+python3 init_db.py
+или
+python init_db.py
 
 ## Запуск бота 
 python3 bot.py
