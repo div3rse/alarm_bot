@@ -1,0 +1,62 @@
+<!-- templates/logs.html -->
+{% extends "base.html" %}
+{% block title %}Логи бота{% endblock %}
+{% block dashboard_content %}
+<h2 class="border-bottom border-bottom-secondary border-top-0 mb-5 pt-5"><i class="bi bi-file-earmark-text-fill header-icon"></i> Логи бота</h2>
+<div class="card">
+    <div class="card-body bg-light" style="height: 500px; overflow-y: scroll;" id="log-output">
+        <!-- Логи будут отображаться здесь -->
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var ws_scheme = window.location.protocol === "https:" ? "wss" : "ws";
+    var ws = new WebSocket(ws_scheme + "://" + window.location.host + "/ws/logs");
+
+    ws.onopen = function() {
+        console.log("WebSocket соединение установлено.");
+    };
+
+    ws.onmessage = function(event) {
+        console.log("Получено сообщение:", event.data);
+        var logOutput = document.getElementById('log-output');
+        
+        // Создаём новый элемент для лога
+        var logEntry = document.createElement('div');
+        logEntry.classList.add('log-entry');
+
+        // Проверяем тип лога
+        if (event.data.includes("ERROR:")) {
+            logEntry.classList.add('error-log');
+        } else if (event.data.includes("SEND:")) {
+            logEntry.classList.add('send-log');
+        }
+
+        // Добавляем текст лога
+        logEntry.textContent = event.data;
+
+        // Добавляем разделитель
+        var separator = document.createElement('hr');
+        separator.classList.add('log-separator');
+
+        // Добавляем лог и разделитель в вывод
+        logOutput.appendChild(logEntry);
+        logOutput.appendChild(separator);
+
+        // Прокручиваем вниз
+        logOutput.scrollTop = logOutput.scrollHeight;
+    };
+
+    ws.onerror = function(error) {
+        console.error("WebSocket ошибка:", error);
+    };
+
+    ws.onclose = function(event) {
+        console.log("WebSocket соединение закрыто.");
+        var logOutput = document.getElementById('log-output');
+        logOutput.innerHTML += "\nСоединение закрыто.";
+    };
+</script>
+{% endblock %}

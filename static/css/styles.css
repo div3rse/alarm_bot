@@ -1,0 +1,654 @@
+/* static/css/styles.css */
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Определение CSS-переменных для градиентов и их перевёрнутых версий */
+:root {
+    /* Primary: Deep Blue to Light Blue */
+    --primary-gradient: linear-gradient(45deg, #1e3c72, #2a5298);
+    --primary-gradient-reversed: linear-gradient(45deg, #2a5298, #1e3c72);
+    
+    /* Secondary: Purple to Indigo */
+    --secondary-gradient: linear-gradient(45deg, #8e2de2, #4a00e0);
+    --secondary-gradient-reversed: linear-gradient(45deg, #4a00e0, #8e2de2);
+    
+    /* Success: Emerald Green to Light Green */
+    --success-gradient: linear-gradient(45deg, #56ab2f, #a8e063);
+    --success-gradient-reversed: linear-gradient(45deg, #a8e063, #56ab2f);
+    
+    /* Danger: Fiery Red to Dark Red */
+    --danger-gradient: linear-gradient(45deg, #e52d27, #b31217);
+    --danger-gradient-reversed: linear-gradient(45deg, #b31217, #e52d27);
+    
+    /* Warning: Vibrant Orange to Yellow */
+    --warning-gradient: linear-gradient(45deg, #f7971e, #ffd200);
+    --warning-gradient-reversed: linear-gradient(45deg, #ffd200, #f7971e);
+    
+    /* Info: Teal to Light Blue */
+    --info-gradient: linear-gradient(45deg, #00c6ff, #0072ff);
+    --info-gradient-reversed: linear-gradient(45deg, #0072ff, #00c6ff);
+    
+    /* Light: Soft Grey to White */
+    --light-gradient: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    --light-gradient-reversed: linear-gradient(45deg, #e9ecef, #f8f9fa);
+    
+    /* Dark: Charcoal Grey to Black */
+    --dark-gradient: linear-gradient(45deg, #343a40, #212529);
+    --dark-gradient-reversed: linear-gradient(45deg, #212529, #343a40);
+    
+    /* White: Pure White to Light Grey */
+    --white-gradient: linear-gradient(45deg, #ffffff, #f8f9fa);
+    --white-gradient-reversed: linear-gradient(45deg, #f8f9fa, #ffffff);
+    
+    /* Black: Jet Black to Dark Grey */
+    --black-gradient: linear-gradient(45deg, #000000, #343a40);
+    --black-gradient-reversed: linear-gradient(45deg, #343a40, #000000);
+    
+    /* Secondary Alternate: Soft Pink to Light Coral */
+    --secondary-alt-gradient: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    --secondary-alt-gradient-reversed: linear-gradient(45deg, #fad0c4, #ff9a9e);
+    
+    /* Сплошные цвета для каждой категории */
+    --primary-color: #1e3c72;
+    --secondary-color: #8e2de2;
+    --success-color: #56ab2f;
+    --danger-color: #e52d27;
+    --warning-color: #f7971e;
+    --info-color: #00c6ff;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    
+    /* Цвета для текста */
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #ffffff;
+    --success-text-color: #ffffff;
+    --danger-text-color: #ffffff;
+    --warning-text-color: #ffffff;
+    --info-text-color: #ffffff;
+    --light-text-color: #212529;
+    --dark-text-color: #ffffff;
+    --white-text-color: #212529;
+    --black-text-color: #ffffff;
+    
+    /* Цвета границ */
+    --primary-border-color: #1e3c72;
+    --secondary-border-color: #8e2de2;
+    --success-border-color: #56ab2f;
+    --danger-border-color: #e52d27;
+    --warning-border-color: #f7971e;
+    --info-border-color: #00c6ff;
+    --light-border-color: #e9ecef;
+    --dark-border-color: #212529;
+    --white-border-color: #f8f9fa;
+    --black-border-color: #343a40;
+}
+
+/* Кнопки */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-gradient-reversed);
+}
+
+.btn-secondary {
+    background: var(--secondary-gradient);
+    border: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-gradient-reversed);
+}
+
+.btn-success {
+    background: var(--success-gradient);
+    border: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-success:hover {
+    background: var(--success-gradient-reversed);
+}
+
+.btn-danger {
+    background: var(--danger-gradient);
+    border: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-danger:hover {
+    background: var(--danger-gradient-reversed);
+}
+
+.btn-warning {
+    background: var(--warning-gradient);
+    border: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-warning:hover {
+    background: var(--warning-gradient-reversed);
+}
+
+.btn-info {
+    background: var(--info-gradient);
+    border: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-info:hover {
+    background: var(--info-gradient-reversed);
+}
+
+.btn-light {
+    background: var(--light-gradient);
+    border: none;
+    color: var(--light-text-color);
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-light:hover {
+    background: var(--light-gradient-reversed);
+}
+
+.btn-dark {
+    background: var(--dark-gradient);
+    border: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-dark:hover {
+    background: var(--dark-gradient-reversed);
+}
+
+.btn-white {
+    background: var(--white-gradient);
+    border: none;
+    color: var(--white-text-color);
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-white:hover {
+    background: var(--white-gradient-reversed);
+}
+
+.btn-black {
+    background: var(--black-gradient);
+    border: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-black:hover {
+    background: var(--black-gradient-reversed);
+}
+
+.btn-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: var(--primary-gradient-reversed);
+    text-decoration: underline;
+}
+
+/* Фоновые классы */
+.bg-primary {
+    background: var(--primary-gradient) !important;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.bg-primary:hover {
+    background: var(--primary-gradient-reversed) !important;
+}
+
+.bg-secondary {
+    background: var(--secondary-gradient) !important;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.bg-secondary:hover {
+    background: var(--secondary-gradient-reversed) !important;
+}
+
+.bg-success {
+    background: var(--success-gradient) !important;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.bg-success:hover {
+    background: var(--success-gradient-reversed) !important;
+}
+
+.bg-danger {
+    background: var(--danger-gradient) !important;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.bg-danger:hover {
+    background: var(--danger-gradient-reversed) !important;
+}
+
+.bg-warning {
+    background: var(--warning-gradient) !important;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.bg-warning:hover {
+    background: var(--warning-gradient-reversed) !important;
+}
+
+.bg-info {
+    background: var(--info-gradient) !important;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.bg-info:hover {
+    background: var(--info-gradient-reversed) !important;
+}
+
+.bg-light {
+    background: var(--light-gradient) !important;
+    color: var(--light-text-color);
+    transition: background 0.3s ease;
+}
+
+.bg-light:hover {
+    background: var(--light-gradient-reversed) !important;
+}
+
+.bg-dark {
+    background: var(--dark-gradient) !important;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.bg-dark:hover {
+    background: var(--dark-gradient-reversed) !important;
+}
+
+.bg-white {
+    background: var(--white-gradient) !important;
+    color: var(--white-text-color);
+    transition: background 0.3s ease;
+}
+
+.bg-white:hover {
+    background: var(--white-gradient-reversed) !important;
+}
+
+.bg-black {
+    background: var(--black-gradient) !important;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.bg-black:hover {
+    background: var(--black-gradient-reversed) !important;
+}
+
+/* Текстовые классы */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.text-success {
+    color: var(--success-color) !important;
+}
+
+.text-danger {
+    color: var(--danger-color) !important;
+}
+
+.text-warning {
+    color: var(--warning-color) !important;
+}
+
+.text-info {
+    color: var(--info-color) !important;
+}
+
+.text-light {
+    color: var(--light-text-color) !important;
+}
+
+.text-dark {
+    color: var(--dark-color) !important;
+}
+
+.text-white {
+    color: var(--white-color) !important;
+}
+
+.text-black {
+    color: var(--black-color) !important;
+}
+
+/* Бордерные классы */
+.border-primary {
+    border: 2px solid var(--primary-border-color) !important;
+}
+
+.border-secondary {
+    border: 2px solid var(--secondary-border-color) !important;
+}
+
+.border-success {
+    border: 2px solid var(--success-border-color) !important;
+}
+
+.border-danger {
+    border: 2px solid var(--danger-border-color) !important;
+}
+
+.border-warning {
+    border: 2px solid var(--warning-border-color) !important;
+}
+
+.border-info {
+    border: 2px solid var(--info-border-color) !important;
+}
+
+.border-light {
+    border: 2px solid var(--light-border-color) !important;
+}
+
+.border-dark {
+    border: 2px solid var(--dark-border-color) !important;
+}
+
+.border-white {
+    border: 2px solid var(--white-border-color) !important;
+}
+
+.border-black {
+    border: 2px solid var(--black-border-color) !important;
+}
+
+/* Классы для карточек */
+.card-primary {
+    border-top: 5px solid var(--primary-border-color);
+}
+
+.card-secondary {
+    border-top: 5px solid var(--secondary-border-color);
+}
+
+.card-success {
+    border-top: 5px solid var(--success-border-color);
+}
+
+.card-danger {
+    border-top: 5px solid var(--danger-border-color);
+}
+
+.card-warning {
+    border-top: 5px solid var(--warning-border-color);
+}
+
+.card-info {
+    border-top: 5px solid var(--info-border-color);
+}
+
+.card-light {
+    border-top: 5px solid var(--light-border-color);
+}
+
+.card-dark {
+    border-top: 5px solid var(--dark-border-color);
+}
+
+.card-white {
+    border-top: 5px solid var(--white-border-color);
+}
+
+.card-black {
+    border-top: 5px solid var(--black-border-color);
+}
+
+/* Стилизация alert-ов */
+.alert-primary {
+    background: var(--primary-gradient);
+    color: var(--primary-text-color);
+    border: none;
+}
+
+.alert-secondary {
+    background: var(--secondary-gradient);
+    color: var(--secondary-text-color);
+    border: none;
+}
+
+.alert-success {
+    background: var(--success-gradient);
+    color: var(--success-text-color);
+    border: none;
+}
+
+.alert-danger {
+    background: var(--danger-gradient);
+    color: var(--danger-text-color);
+    border: none;
+}
+
+.alert-warning {
+    background: var(--warning-gradient);
+    color: var(--warning-text-color);
+    border: none;
+}
+
+.alert-info {
+    background: var(--info-gradient);
+    color: var(--info-text-color);
+    border: none;
+}
+
+.alert-light {
+    background: var(--light-gradient);
+    color: var(--light-text-color);
+    border: none;
+}
+
+.alert-dark {
+    background: var(--dark-gradient);
+    color: var(--dark-text-color);
+    border: none;
+}
+
+.alert-white {
+    background: var(--white-gradient);
+    color: var(--white-text-color);
+    border: none;
+}
+
+.alert-black {
+    background: var(--black-gradient);
+    color: var(--black-text-color);
+    border: none;
+}
+
+/* Индивидуальные hover состояния для alert-ов */
+.alert-primary:hover {
+    background: var(--primary-gradient-reversed) !important;
+}
+
+.alert-secondary:hover {
+    background: var(--secondary-gradient-reversed) !important;
+}
+
+.alert-success:hover {
+    background: var(--success-gradient-reversed) !important;
+}
+
+.alert-danger:hover {
+    background: var(--danger-gradient-reversed) !important;
+}
+
+.alert-warning:hover {
+    background: var(--warning-gradient-reversed) !important;
+}
+
+.alert-info:hover {
+    background: var(--info-gradient-reversed) !important;
+}
+
+.alert-light:hover {
+    background: var(--light-gradient-reversed) !important;
+}
+
+.alert-dark:hover {
+    background: var(--dark-gradient-reversed) !important;
+}
+
+.alert-white:hover {
+    background: var(--white-gradient-reversed) !important;
+}
+
+.alert-black:hover {
+    background: var(--black-gradient-reversed) !important;
+}
+
+/* Стилизация логов */
+.log-entry.send-log {
+    color: #28a745; /* Зеленый цвет */
+    font-weight: 500;
+}
+
+.log-entry.error-log {
+    color: #dc3545; /* Красный цвет */
+    font-weight: 700;
+}
+
+/* Разделители между логами */
+.log-separator {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 10px 0;
+}
+
+/* Обеспечение переноса текста */
+#log-output {
+    white-space: pre-wrap; /* Перенос текста */
+}
+
+/* Дополнительные стили для улучшения интерфейса */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    letter-spacing: 0.5px;
+    margin-right: 15px;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .nav-link {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .login-container .card {
+        max-width: 90%;
+    }
+}
+
+/* Дополнительные стили для анимации кнопок */
+.btn-primary, .btn-secondary, .btn-success, .btn-danger, .btn-warning, .btn-info, .btn-light, .btn-dark, .btn-white, .btn-black {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-success:hover, .btn-danger:hover, .btn-warning:hover, .btn-info:hover, .btn-light:hover, .btn-dark:hover, .btn-white:hover, .btn-black:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Стилизация заголовков карточек */
+.card-title {
+    font-weight: 700;
+    color: white;
+    background: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон для заголовка */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Стилизация форм */
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-gradient);
+    box-shadow: 0 0 0 0.2rem rgba(30, 60, 114, 0.25);
+}
+
+/* Стилизация иконок внутри input */
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.input-icon input {
+    padding-left: 35px;
+}
+
+/* Обеспечение вертикального выравнивания текста */
+tbody, td, tfoot, th, thead, tr {
+    vertical-align: middle;
+}
+
+/* Пример бордерного класса с использованием сплошного цвета */
+.border-bottom-secondary {
+    border-bottom: 5px solid var(--secondary-border-color) !important;
+    border-top: none !important;
+}
