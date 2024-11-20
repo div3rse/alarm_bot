@@ -5,7 +5,7 @@
 
 ```bash
 git clone https://github.com/div3rse/alarm_bot.git
-cd my-alarm_bot-repo
+cd alarm_bot
 python3 -m venv venv
 source venv/bin/activate  # Для Windows: venv\Scripts\activate
 pip install -r requirements.txt
